@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{openfire_api}
-  s.version = "0.1.0"
+  s.name = %q{openfire_api_ruby}
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Paul Asmuth"]
-  s.date = %q{2011-06-26}
+  s.authors = ["Paul Asmuth, Babu"]
+  s.date = %q{2014-02-19}
   s.description = %q{ruby client for the openfire xmpp-server user_service api}
-  s.email = %q{paul@23linesofcode.com}
+  s.email = %q{paul@23linesofcode.com, babu309@gmail.com}
   s.files = [
     "Gemfile",
     "Gemfile.lock",
@@ -19,12 +19,13 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/openfire_api.rb",
     "lib/openfire_api/user_service.rb",
+    "lib/openfire_api/group_service.rb",
     "openfire_api.gemspec",
     "readme.rdoc",
     "spec/spec_helper.rb",
     "spec/user_service_spec.rb"
   ]
-  s.homepage = %q{http://github.com/paulasmuth/openfire_api}
+  s.homepage = %q{http://github.com/babu3009/openfire_api}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{ruby client for the openfire userservice api}
