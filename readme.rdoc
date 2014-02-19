@@ -8,10 +8,10 @@ a ruby client for openfire's user_service api
 == Installation
 
 In your Gemfile
-  gem "mtgox-ruby", :git => "git://github.com/babu3009/openfire_api.git"
+  gem "openfire_api_ruby"
 	
 or
-  gem install git://github.com/babu3009/openfire_api.git
+  gem install openfire_api_ruby
 
 
 == Usage
