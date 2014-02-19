@@ -2,16 +2,16 @@
 
 a ruby client for openfire's user_service api
 
-{<img src="https://secure.travis-ci.org/paulasmuth/openfire_api.png" />}[http://travis-ci.org/paulasmuth/openfire_api]
+{<img src="https://secure.travis-ci.org/babu3009/openfire_api.png" />}[http://travis-ci.org/babu3009/openfire_api]
 
 
 == Installation
 
 In your Gemfile
-  gem "mtgox-ruby", :git => "git://github.com/paulasmuth/openfire_api.git"
+  gem "mtgox-ruby", :git => "git://github.com/babu3009/openfire_api.git"
 	
 or
-  gem install git://github.com/paulasmuth/openfire_api.git
+  gem install git://github.com/babu3009/openfire_api.git
 
 
 == Usage
