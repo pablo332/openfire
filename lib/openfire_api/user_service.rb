@@ -59,7 +59,7 @@ private
 
   def submit_http_request(uri, params)
     res = Net::HTTP.start(uri.host, uri.port) do |http|
-      http.get("#{uri.path}?#{params}")
+      http.get("#{uri}?#{params}")
     end
     return res.body
   rescue Exception => e
