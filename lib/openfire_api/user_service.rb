@@ -58,9 +58,12 @@ private
   end
 
   def submit_http_request(uri, params)
-    res = Net::HTTP.start(uri.host, uri.port) do |http|
-      http.get("#{uri}?#{params}")
-    end
+    #res = Net::HTTP.start(uri.host, uri.port) do |http|
+    #  http.get("#{uri}?#{params}")
+    #end
+    req = Net::HTTP::Get.new("#{uri.path}?#{params}")
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)}
     return res.body
   rescue Exception => e
     raise HTTPException, e.to_s
