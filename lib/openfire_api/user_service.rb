@@ -57,13 +57,14 @@ private
     parse_response(data)
   end
 
-  def submit_http_request(uri, params)
+  def submit_http_request(uri, params_as_string)
     #res = Net::HTTP.start(uri.host, uri.port) do |http|
     #  http.get("#{uri}?#{params}")
     #end
-    req = Net::HTTP::Get.new("#{uri.path}?#{params}")
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)}
+    #res = Net::HTTP.get(uri.host, "#{uri.path}?#{params}",uri.port)
+    uri.query = URI.encode(params_as_string)
+    res = Net::HTTP.get_response(uri)
+
     return res.body
   rescue Exception => e
     raise HTTPException, e.to_s
