@@ -11,8 +11,8 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "openfire_api"
-  gem.homepage = "http://github.com/babu3009/openfire_api"
+  gem.name = "openfire_api_ruby"
+  gem.homepage = "http://github.com/babu3009/openfire_api_ruby"
   gem.summary = %Q{ruby client for the openfire userservice api}
   gem.description = %Q{ruby client for the openfire xmpp-server user_service api}
   gem.email = "babu3009@gmail.com"

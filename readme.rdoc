@@ -18,7 +18,7 @@ or
 
 create a new userservice object
 
-  api = OpenfireApi::UserService.new(:url => "http://localhost:9090/", :secret => "BIGSECRET")
+  api = OpenfireApiRuby::UserService.new(:url => "http://localhost:9090/", :secret => "BIGSECRET")
   
 register new user
   
@@ -41,3 +41,15 @@ lock user
 unlock user
 
   api.unlock_user!(:username => "user")
+
+create a new roomservice object
+
+api = OpenfireApiRuby::RoomService.new(:url => "http://localhost:9090/", :secret => "BIGSECRET")
+
+create a new room
+
+api.add_room!(:roomname => "room", :jid => "jid", :subdomain => "groupchat")
+
+delete a room
+
+api.delete_room!(:roomname => "room", :subdomain => "groupchat")

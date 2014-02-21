@@ -3,7 +3,7 @@ require ::File.expand_path('../spec_helper', __FILE__)
 describe "User Service" do
 
   before :all do
-    @user_service = OpenfireApi::UserService.new(:url => "http://fakehost.int:2323/", :secret => "bigsecret")
+    @user_service = OpenfireApiRuby::UserService.new(:url => "http://fakehost.int:2323/", :secret => "bigsecret")
   end
   
   it "should build query urls" do
@@ -61,27 +61,27 @@ describe "User Service" do
   
   it "should handle the error: user service disabled" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/userService/userservice?username=user1&type=disable&secret=bigsecret", :body => "<error>UserServiceDisabled</error>")
-    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApi::UserService::UserServiceDisabledException)
+    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApiRuby::UserService::UserServiceDisabledException)
   end
   
   it "should handle the error: request not authorized" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/userService/userservice?username=user1&type=disable&secret=bigsecret", :body => "<error>RequestNotAuthorised</error>")
-    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApi::UserService::RequestNotAuthorisedException)
+    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApiRuby::UserService::RequestNotAuthorisedException)
   end
   
   it "should handle the error: illegal argument" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/userService/userservice?username=user1&type=disable&secret=bigsecret", :body => "<error>IllegalArgumentException</error>")
-    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApi::UserService::IllegalArgumentException)
+    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApiRuby::UserService::IllegalArgumentException)
   end
   
   it "should handle the error: user not found" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/userService/userservice?username=user1&type=disable&secret=bigsecret", :body => "<error>UserNotFoundException</error>")
-    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApi::UserService::UserNotFoundException)
+    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApiRuby::UserService::UserNotFoundException)
   end
   
   it "should handle the error: user already exists" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/userService/userservice?username=user1&type=disable&secret=bigsecret", :body => "<error>UserAlreadyExistsException</error>")
-    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApi::UserService::UserAlreadyExistsException)
+    lambda{ @user_service.lock_user!(:username => "user1") }.should raise_error(OpenfireApiRuby::UserService::UserAlreadyExistsException)
   end
 
 end
