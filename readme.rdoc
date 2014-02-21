@@ -1,8 +1,8 @@
 = openfire_api
 
-a ruby client for openfire's user_service api
+a ruby client for openfire's user_service, room_service and group_service api
 
-{<img src="https://secure.travis-ci.org/babu3009/openfire_api.png" />}[http://travis-ci.org/babu3009/openfire_api]
+{<img src="http://gravatar.com/avatar/babu3009?size=50" />}
 
 
 == Installation
