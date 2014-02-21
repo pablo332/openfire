@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{openfire_api_ruby}
-  s.version = "0.3.0"
+  s.version = "0.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Babu"]
@@ -20,10 +20,12 @@ Gem::Specification.new do |s|
     "lib/openfire_api_ruby.rb",
     "lib/openfire_api_ruby/user_service.rb",
     "lib/openfire_api_ruby/group_service.rb",
+    "lib/openfire_api_ruby/room_service.rb",
     "openfire_api_ruby.gemspec",
     "readme.rdoc",
     "spec/spec_helper.rb",
-    "spec/user_service_spec.rb"
+    "spec/user_service_spec.rb",
+    "spec/room_service_spec.rb"
   ]
   s.homepage = %q{http://github.com/babu3009/openfire_api_ruby}
   s.require_paths = ["lib"]
