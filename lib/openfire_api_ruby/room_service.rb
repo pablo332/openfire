@@ -1,7 +1,7 @@
 class OpenfireApiRuby::RoomService
 
   @@api_path = "plugins/roomService/roomservice"
-  @@api_exceptions = %w(RoomServiceDisabled RequestNotAuthorised NotAllowedException IllegalArgumentException, AlreadyExistsException, NotFoundException)
+  @@api_exceptions = %w(RoomServiceDisabled RequestNotAuthorised NotAllowedException IllegalArgumentException AlreadyExistsException NotFoundException)
 
   class HTTPException < StandardError; end
   class InvalidResponseException < StandardError; end
