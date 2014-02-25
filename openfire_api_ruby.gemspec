@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Babu"]
   s.date = %q{2014-02-21}
-  s.description = %q{ruby client for the openfire xmpp-server user_service api}
-  s.email = %q{paul@23linesofcode.com, babu309@gmail.com}
+  s.description = %q{ruby client for the openfire xmpp-server user_service, room_service and group_service api}
+  s.email = %q{ babu309@gmail.com}
   s.files = [
     "Gemfile",
     "Gemfile.lock",
@@ -29,11 +29,12 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/babu3009/openfire_api_ruby}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{ruby client for the openfire userservice api}
+  s.rubygems_version = %q{2.0.0}
+  s.summary = %q{ruby client for the openfire user service, room service and group service api}
   s.test_files = [
     "spec/spec_helper.rb",
-    "spec/user_service_spec.rb"
+    "spec/user_service_spec.rb",
+    "spec/room_service_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
