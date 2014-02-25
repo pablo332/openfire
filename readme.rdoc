@@ -44,21 +44,21 @@ unlock user
 
 ## create a new roomservice object
 
-api = OpenfireApiRuby::RoomService.new(:url => "http://localhost:9090/", :secret => "BIGSECRET")
+  api = OpenfireApiRuby::RoomService.new(:url => "http://localhost:9090/", :secret => "BIGSECRET")
 
 create a new room
 
-api.add_room!(:roomname => "room", :jid => "jid", :subdomain => "groupchat")
+  api.add_room!(:roomname => "room", :jid => "jid", :subdomain => "groupchat")
 
 delete a room
 
-api.delete_room!(:roomname => "room", :subdomain => "groupchat")
+  api.delete_room!(:roomname => "room", :subdomain => "groupchat")
 
 
 create a muc service
 
-api.add_muc_service!(:subdomain=>'demo-service', :description=>'this is a demo muc service')
+  api.add_muc_service!(:subdomain=>'demo-service', :description=>'this is a demo muc service')
 
 delete a muc service
 
-api.delete_muc_service!(:subdomain=>'demo-service')
+  api.delete_muc_service!(:subdomain=>'demo-service')
