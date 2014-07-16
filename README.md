@@ -1,5 +1,9 @@
 # Openfire
 
+[![Gem Version](http://img.shields.io/gem/v/openfire.svg)](https://rubygems.org/gems/openfire)
+[![Build Status](https://api.travis-ci.org/chrisb/openfire.png?branch=master)](http://travis-ci.org/chrisb/openfire)
+[![Code Climate](https://codeclimate.com/github/chrisb/openfire.png)](https://codeclimate.com/github/chrisb/openfire)
+
 A Ruby client for accessing Openfire's User, Room, and Group service API.
 
 ## Installation
@@ -7,7 +11,7 @@ A Ruby client for accessing Openfire's User, Room, and Group service API.
 Add it to your Gemfile:
 
 ```ruby
-gem 'openfire' # git: 'chris/openfire'
+gem 'openfire' # git: 'chrisb/openfire'
 ```
 
 And `bundle install`.
@@ -75,3 +79,13 @@ client.add_muc_service! :subdomain => 'demo-service', :description => 'this is a
 ```ruby
 client.delete_muc_service! :subdomain => 'demo-service'
 ```
+
+## License
+
+Licensed under the [MIT License](http://opensource.org/licenses/mit-license.html).
+
+## Authors
+
+* [Chris Bielinski](https://github.com/chrisb) <chris@shadowreactor.com>
+* [Babu](https://github.com/babu3009) <babu309@gmail.com>
+* [Paul Asmuth](https://github.com/paulasmuth) <paul@23linesofcode.com>
