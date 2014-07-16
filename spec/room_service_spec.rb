@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "Room Service" do
 
   before :all do
-    @room_service = OpenfireApiRuby::RoomService.new(:url => "http://fakehost.int:2323/", :secret => "bigsecret")
+    @client = Openfire::Client.new 'http://fakehost.int:2323/', 'bigsecret'
+    @room_service = @client.get_service :room
   end
 
   it "should build query urls" do
@@ -45,23 +46,22 @@ describe "Room Service" do
 
   it "should handle the error: room service disabled" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/roomService/roomservice?roomname=room1&type=add&secret=bigsecret", :body => "<error>RoomServiceDisabled</error>")
-    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(OpenfireApiRuby::RoomService::RoomServiceDisabledException)
+    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(Openfire::Service::Room::RoomServiceDisabledException)
   end
 
   it "should handle the error: request not authorized" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/roomService/roomservice?roomname=room1&type=add&secret=bigsecret", :body => "<error>RequestNotAuthorised</error>")
-    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(OpenfireApiRuby::RoomService::RequestNotAuthorisedException)
+    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(Openfire::Service::Room::RequestNotAuthorisedException)
   end
 
   it "should handle the error: not allowed" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/roomService/roomservice?roomname=room1&type=add&secret=bigsecret", :body => "<error>NotAllowedException</error>")
-    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(OpenfireApiRuby::RoomService::NotAllowedException)
+    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(Openfire::Service::Room::NotAllowedException)
   end
 
   it "should handle the error: illegal argument" do
     FakeWeb.register_uri(:get, "http://fakehost.int:2323/plugins/roomService/roomservice?roomname=room1&type=add&secret=bigsecret", :body => "<error>IllegalArgumentException</error>")
-    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(OpenfireApiRuby::RoomService::IllegalArgumentException)
+    lambda{ @room_service.add_room!(:roomname => "room1") }.should raise_error(Openfire::Service::Room::IllegalArgumentException)
   end
 
 end
-
