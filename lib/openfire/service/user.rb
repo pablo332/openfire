@@ -4,6 +4,8 @@ module Openfire
 
       config.path = 'plugins/userService/userservice'
       config.exceptions = [
+        'HTTPException',
+        'InvalidResponseException',
         'UserServiceDisabled',
         'RequestNotAuthorised',
         'IllegalArgumentException',
