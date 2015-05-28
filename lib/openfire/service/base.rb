@@ -2,7 +2,9 @@ module Openfire
   module Service
     class Base
       include ActiveSupport::Configurable
-
+      
+      class InvalidResponseException < StandardError; end
+        
       config.path = '/'
       config.exceptions = []
 
