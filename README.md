@@ -6,6 +6,8 @@
 
 A Ruby client for accessing Openfire's User, Room, and Group service API.
 
+need plugin's openfire for access via http (User Service, MUC Service)
+
 ## Installation
 
 Add it to your Gemfile:
@@ -18,10 +20,10 @@ And `bundle install`.
 
 ## Usage
 
-Connect to the API by providing the endpoint URL and secret token:
+Connect to the API by providing the endpoint URL and secret token (plugin.userservice.secret in properties dashboard after add plugins):
 
 ```ruby
-client = Openfire::Client.new 'http://localhost:9090/', 'ABC123DEF456'
+client = Openfire::Client.new 'http://localhost:9090/', 'plugin.userservice.secret'
 ```
 
 ##### Register a New User
@@ -71,7 +73,7 @@ client.delete_room! roomname: 'general', :subdomain => "generalchat"
 ##### Create a MUC (multi-user chat) Service
 
 ```ruby
-client.add_muc_service! :subdomain => 'demo-service', :description => 'this is a demo muc service'
+client.create_muc_service! :subdomain => 'demo-service', :description => 'this is a demo muc service'
 ```
 
 ##### Delete a MUC Service
