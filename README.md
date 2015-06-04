@@ -7,6 +7,7 @@
 A Ruby client for accessing Openfire's User, Room, and Group service API.
 
 need plugin's openfire for access via http (User Service, MUC Service)
+and enable Server -> Server config -> User Service and "Enabled - User service requests will be processed"
 
 ## Installation
 
