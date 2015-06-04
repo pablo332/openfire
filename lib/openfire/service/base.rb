@@ -44,6 +44,8 @@ module Openfire
         end
 
         def parse_response(data)
+          puts 'data'
+          puts data
           error = data.match(/<error>(.*)<\/error>/)
           if error && config.exceptions.include?(error[1])
             exception_klass = "#{self.class}::#{error[1].gsub('Exception', '')}Exception"
